@@ -12,6 +12,12 @@
   padding: 18px 33px;
 }
 
+.collapseTable-title {
+  padding: 18px 30px;
+  font-weight: 400;
+  font-size: 16px;
+}
+
 .containerArrow {
   justify-self: end;
   padding: 0 33px;
@@ -19,7 +25,20 @@
 .containerTitle {
   display: grid;
   row-gap: 30px;
-  padding: 18px 33px;
+  padding: 30px 33px;
+}
+.contentTitle {
+  display: grid;
+  padding: 30px 0px;
+  color: #a5a5a5;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.contentData {
+  font-weight: 400;
+  font-size: 12px;
+  color: #222222;
 }
 
 .containerArrow {
@@ -51,4 +70,8 @@
   -o-transition: all 0.25s ease;
   transition: all 0.25s ease;
   z-index: -1;
+}
+
+.action-icon {
+  cursor: pointer;
 }
