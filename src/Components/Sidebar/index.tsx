@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { ReactComponent as Vazio } from "../../assets/img/vazio.svg";
+import { ReactComponent as Vazio } from "../../assets/img/svg/vazio.svg";
 import {
   MdContactMail,
   MdContactPage,
   MdContactPhone,
   MdHome,
   MdInfo,
+  MdMediaBluetoothOn,
   MdMenu,
 } from "react-icons/md";
 
@@ -47,6 +48,16 @@ export const Sidebar: React.FC = () => {
           link: "/contact/phone",
           icon: <MdContactPhone size={25} />,
         },
+        {
+          name: "Address",
+          link: "/contact/address",
+          icon: <MdHome size={25} />,
+        },
+        {
+          name: "Facebook",
+          link: "/contact/facebook",
+          icon: <MdMediaBluetoothOn size={25} />,
+        },
       ],
     },
   ];
@@ -70,12 +81,12 @@ export const Sidebar: React.FC = () => {
         }
         className="sidebarMain basicTransition"
       >
-        <div className="d-flex justify-content-center w-100">
-          <div className="logoImageContainer">
+        <div className="d-flex justify-content-center w-100 basicTransition">
+          <div className="logoImageContainer basicTransition">
             <Vazio className="basicTransition" width={open ? "100%" : "0px"} />
           </div>
         </div>
-        <div style={{ height: "fit-content" }}>
+        <div className="basicTransition" style={{ height: "fit-content" }}>
           {sidebarList.map((item, index) => (
             <>
               <ul
@@ -90,6 +101,7 @@ export const Sidebar: React.FC = () => {
                   onClick={() => {
                     setSelectedItem(index === selectedItem ? null : index);
                     item.subItems ? setSubItems(!subItems) : setSubItems(false);
+                    setSelectedSubItems(null);
                   }}
                   className={
                     "d-flex align-items-center sidebarItensContainer action-icon" +
@@ -102,18 +114,21 @@ export const Sidebar: React.FC = () => {
                 </li>
               </ul>
               <ul
-                className="fastTransition d-block sidebarSubItensContainer"
+                className="fastTransition sidebarSubItensContainer"
                 style={
                   open && subItems
                     ? {
-                        transform: "translateY(0px)",
+                        transform: "translateY(0%) scaleY(1)",
+                        maxHeight: "1000px",
                         visibility: "visible",
-                        height: "auto",
+                        position: "relative",
                       }
                     : {
-                        transform: "translateY(-20px)",
+                        transform: "translateY(-50%) scaleY(0)",
+                        maxHeight: "0px",
                         visibility: "hidden",
-                        height: "0px",
+                        position: "relative",
+                        zIndex: -190,
                       }
                 }
               >

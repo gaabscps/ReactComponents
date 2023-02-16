@@ -1,6 +1,5 @@
 import React from "react";
 import { CollapseTable } from "../../Components/CollapseTable";
-import { Sidebar } from "../../Components/Sidebar";
 
 export const MainPage = () => {
   return (

@@ -10,7 +10,10 @@
   transition: all 0.25s ease-in-out;
 }
 .fastTransition {
-  transition: all 0.1s ease-in-out;
+  transition: all 0.15s ease-in-out;
+}
+.slowTransition {
+  transition: all 0.35s ease-in-out;
 }
 
 .action-icon {

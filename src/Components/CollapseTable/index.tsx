@@ -9,7 +9,7 @@ export interface CollapseTableProps {
       data: string;
     }
   ];
-  containerData2?: [  
+  containerData2?: [
     {
       title: string;
       data: string;
