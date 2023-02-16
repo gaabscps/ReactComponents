@@ -2,9 +2,19 @@ import React, { useState } from "react";
 import { MdKeyboardArrowDown } from "react-icons/md";
 
 export interface CollapseTableProps {
-  containerTitle: any;
-  containerData: any;
-  containerData2?: any;
+  containerTitle: string;
+  containerData: [
+    {
+      title: string;
+      data: string;
+    }
+  ];
+  containerData2?: [  
+    {
+      title: string;
+      data: string;
+    }
+  ];
 }
 
 export const CollapseTable: React.FC = ({

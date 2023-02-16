@@ -2,29 +2,11 @@ import React, { useState } from "react";
 import { ReactComponent as Vazio } from "../../assets/img/vazio.svg";
 import { MdMenu } from "react-icons/md";
 
-export const Sidebar = () => {
-  console.log();
-
+export const Sidebar: React.FC = () => {
   const [open, setOpen] = useState(true);
 
-  // const elementId = () => {
-  //   setTimeout(() => {
-  //     document.getElementById("sidebar")?.classList.add("d-block");
-  //     document.getElementById("sidebar")?.classList.remove("hide");
-  //   }, 100);
-  // };
-
-  // const sidebarAnimation = () => {
-  //   !open
-  //     ? elementId()
-  //     : setTimeout(() => {
-  //         document.getElementById("sidebar")?.classList.add("hide");
-  //       }, 100);
-  // };
-
-  const toggle = () => {
+  const toggle = (): void => {
     setOpen(!open);
-    // sidebarAnimation();
   };
 
   return (
@@ -41,7 +23,7 @@ export const Sidebar = () => {
         id="sidebar"
         style={
           open
-            ? { transform: "translate(0px)", width: "100%" }
+            ? { transform: "translate(0px)" }
             : { transform: "translate(-100%)", width: "0px" }
         }
         className="sidebarMain basicTransition"

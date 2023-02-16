@@ -3,7 +3,7 @@ import { Sidebar } from "./Components/Sidebar";
 import { MainPage } from "./Pages/MainPage";
 import "./styles/import.scss";
 
-export const Page = () => {
+export const Page: React.FC = () => {
   return (
     <div className="d-flex">
       <Sidebar />
