@@ -25,4 +25,43 @@
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.02);
   border: solid 1px #e8e8e8;
   border-radius: 10px;
+  background-color: #fff;
+  &:hover {
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  }
+  &:active {
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.sidebarItensContainer {
+  margin: 10px;
+  padding: 10px;
+  &:hover {
+    background-color: #f8f8f8;
+    border-radius: 40px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  }
+  &:active {
+    background-color: #f8f8f8;
+    border-radius: 40px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+  }
+  &.active {
+    background-color: #e6e6e6;
+    border-radius: 40px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.sidebarSubItensContainer {
+  margin: 0 20px;
+}
+
+.sidebarDivider {
+  margin: 15px;
+  margin-top: 40px;
+  background-color: #e8e8e8;
+  border: none;
+  height: 1px;
 }
