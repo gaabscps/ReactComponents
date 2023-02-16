@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
 export interface CollapseTableProps {
   containerTitle: any;
@@ -87,78 +88,84 @@ export const CollapseTable: React.FC = ({
     <>
       <div>
         <div>
-          {containerDatas2 && containerDatas2.length > 0 ? (
-            <div className="collapseTable-title">Titulo</div>
-          ) : (
+          <div style={{ overflow: "auto" }}>
+            {containerDatas2 && containerDatas2.length > 0 ? (
+              <div className="collapseTable-title">Titulo</div>
+            ) : (
+              <div
+                style={{
+                  gridTemplateColumns:
+                    "repeat(" + (containerDatas.length + 1) + ", 1fr)",
+                }}
+                className="containerTitle minWidth-full"
+              >
+                {containerDatas.map((container: any, index: any) => (
+                  <div style={{ width: "100px" }}>{container.title}</div>
+                ))}
+
+                <div className="containerArrow"></div>
+              </div>
+            )}
+
+            <div
+              onClick={() => {
+                setIsOpen(!isOpen);
+              }}
+              style={{
+                gridTemplateColumns:
+                  "repeat(" + (containerDatas.length + 1) + ", 1fr)",
+              }}
+              className="collapseTable-container action-icon containerTitle minWidth-full"
+            >
+              {containerDatas.map((container: any, index: any) => (
+                <div style={{ width: "100px" }}>{container.data}</div>
+              ))}
+              <div
+                style={
+                  containerDatas2 && containerDatas2.length > 0
+                    ? {
+                        position: "relative",
+                        right: "0px",
+                        top: "25px",
+                      }
+                    : {}
+                }
+                className="containerArrow"
+              >
+                <MdKeyboardArrowDown
+                  className={`transformRotate ${isOpen && "out"}`}
+                  size={25}
+                />
+              </div>
+              {containerDatas2.map((container: any, index: any) => (
+                <div>{container.data}</div>
+              ))}
+
+              {/* <div className="containerArrow">X</div> */}
+            </div>
+          </div>
+          {isOpen && (
             <div
               style={{
                 gridTemplateColumns:
                   "repeat(" + (containerDatas.length + 1) + ", 1fr)",
               }}
-              className="containerTitle"
-            >
-              {containerDatas.map((container: any, index: any) => (
-                <div>{container.title}</div>
-              ))}
-
-              <div className="containerArrow"></div>
-            </div>
-          )}
-
-          <div
-            onClick={() => {
-              console.log("isOpen", isOpen);
-              setIsOpen(!isOpen);
-            }}
-            style={{
-              gridTemplateColumns:
-                "repeat(" + (containerDatas.length + 1) + ", 1fr)",
-            }}
-            className="collapseTable-container action-icon containerTitle"
-          >
-            {containerDatas.map((container: any, index: any) => (
-              <div>{container.data}</div>
-            ))}
-            <div
-              style={
-                containerDatas2 && containerDatas2.length > 0
-                  ? {
-                      position: "relative",
-                      right: "0px",
-                      top: "25px",
-                    }
-                  : {}
-              }
-              className="containerArrow"
-            >
-              X
-            </div>
-            {containerDatas2.map((container: any, index: any) => (
-              <div>{container.data}</div>
-            ))}
-
-            {/* <div className="containerArrow">X</div> */}
-          </div>
-
-          <div
-            style={{
-              gridTemplateColumns:
-                "repeat(" + (containerDatas.length + 1) + ", 1fr)",
-            }}
-            className={`
+              id="collapseTable"
+              className={`
             ${isOpen ? "collapseTable--open" : "collapseTable--hidden"}
             collapseTable-container containerTitle
             `}
-          >
-            {contentTitle.map((content: any, index: any) => (
-              <div className="">
-                <div className="contentTitle">{content.title}</div>
-                <div></div>
-                <div>{content.data}</div>
-                <div></div>
-              </div>
-            ))}
-          </div>
+            >
+              {contentTitle.map((content: any, index: any) => (
+                <div className="">
+                  <div className="contentTitle">{content.title}</div>
+                  <div></div>
+                  <div>{content.data}</div>
+                  <div></div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </>

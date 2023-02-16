@@ -1,12 +1,13 @@
-import { CollapseTable } from "./Components/CollapseTable";
+import React from "react";
+import { Sidebar } from "./Components/Sidebar";
+import { MainPage } from "./Pages/MainPage";
 import "./styles/import.scss";
 
 export const Page = () => {
   return (
-    <div style={{ backgroundColor: "#F8F8F8", height: "100vh" }}>
-      <div style={{ padding: "100px 100px" }}>
-        <CollapseTable />
-      </div>
+    <div className="d-flex">
+      <Sidebar />
+      <MainPage />
     </div>
   );
 };

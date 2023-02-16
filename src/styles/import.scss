@@ -1,8 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 //Components
-@import "../Components/CollapseTable/collapseTable.scss";
+@import "../Components/Sidebar/styles/sidebar.scss";
+@import "../Components/CollapseTable/styles/collapseTable.scss";
 @import "../styles/reset.scss";
+@import "./app.scss";
 
 html {
   font-family: "Poppins", sans-serif;

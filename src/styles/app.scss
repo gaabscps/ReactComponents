@@ -1,0 +1,43 @@
+.transformRotate {
+  transition: all 0.25s ease-in-out;
+  transform: rotate(-180deg);
+  &.out {
+    transform: rotate(0deg);
+  }
+}
+
+.basicTransition {
+  transition: all 0.25s ease-in-out;
+}
+
+.action-icon {
+  cursor: pointer;
+}
+
+.minWidth-full {
+  min-width: 1040px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-block {
+  display: block;
+}
+
+.flex-direction-column {
+  flex-direction: column;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.w-100 {
+  width: 100%;
+}
