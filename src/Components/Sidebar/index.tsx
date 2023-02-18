@@ -20,6 +20,7 @@ export const Sidebar: React.FC = () => {
   );
 
   const navigate = useNavigate();
+  const params = window.location.pathname;
 
   const toggle = (): void => {
     setOpen(!open);
@@ -105,6 +106,11 @@ export const Sidebar: React.FC = () => {
                     item.subItems ? setSubItems(!subItems) : setSubItems(false);
                     setSelectedSubItems(null);
                     item.link && navigate(item.link);
+                    item.subItems?.forEach((subItem) => {
+                      if (selectedSubItems !== null) {
+                        navigate("/");
+                      }
+                    });
                   }}
                   className={
                     "d-flex align-items-center sidebarItensContainer action-icon" +
