@@ -106,11 +106,9 @@ export const Sidebar: React.FC = () => {
                     item.subItems ? setSubItems(!subItems) : setSubItems(false);
                     setSelectedSubItems(null);
                     item.link && navigate(item.link);
-                    item.subItems?.forEach((subItem) => {
-                      if (selectedSubItems !== null) {
-                        navigate("/");
-                      }
-                    });
+                    if (selectedSubItems !== null) {
+                      navigate("/");
+                    }
                   }}
                   className={
                     "d-flex align-items-center sidebarItensContainer action-icon" +
