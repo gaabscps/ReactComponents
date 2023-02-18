@@ -54,13 +54,14 @@
 }
 
 .collapseTable--open {
-  max-height: 1000px;
-  height: 100%;
-  transition: max-height 0.5s ease-in;
+  transform-origin: top;
+  transform : scaleY(1);
+  visibility: visible;
 }
 .collapseTable--hidden {
-  height: 0px;
-  transition: max-height 0.5s ease-in;
+  transform-origin: top;
+  transform : scaleY(0);
+  visibility: hidden;
 }
 
 .collapseTable--after {

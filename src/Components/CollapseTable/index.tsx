@@ -154,28 +154,26 @@ export const CollapseTable: React.FC = ({
               {/* <div className="containerArrow">X</div> */}
             </div>
           </div>
-          {isOpen && (
-            <div
-              style={{
-                gridTemplateColumns:
-                  "repeat(" + (containerDatas.length + 1) + ", 1fr)",
-              }}
-              id="collapseTable"
-              className={`
+          <div
+            style={{
+              gridTemplateColumns:
+                "repeat(" + (containerDatas.length + 1) + ", 1fr)",
+            }}
+            id="collapseTable"
+            className={`fastTransition
             ${isOpen ? "collapseTable--open" : "collapseTable--hidden"}
             collapseTable-container containerTitle
             `}
-            >
-              {contentTitle.map((content: any, index: any) => (
-                <div className="">
-                  <div className="contentTitle">{content.title}</div>
-                  <div></div>
-                  <div>{content.data}</div>
-                  <div></div>
-                </div>
-              ))}
-            </div>
-          )}
+          >
+            {contentTitle.map((content: any, index: any) => (
+              <div className="">
+                <div className="contentTitle">{content.title}</div>
+                <div></div>
+                <div>{content.data}</div>
+                <div></div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </>

@@ -125,13 +125,15 @@ export const Sidebar: React.FC = () => {
                 style={
                   open && subItems
                     ? {
-                        transform: "translateY(0%) scaleY(1)",
+                        transform: "scaley(1)",
+                        transformOrigin: "top",
                         maxHeight: "1000px",
                         visibility: "visible",
                         position: "relative",
                       }
                     : {
-                        transform: "translateY(-50%) scaleY(0)",
+                        transform: "scaley(0)",
+                        transformOrigin: "top",
                         maxHeight: "0px",
                         visibility: "hidden",
                         position: "relative",
