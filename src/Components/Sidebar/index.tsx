@@ -9,6 +9,7 @@ import {
   MdMediaBluetoothOn,
   MdMenu,
 } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 export const Sidebar: React.FC = () => {
   const [open, setOpen] = useState(true);
@@ -17,6 +18,8 @@ export const Sidebar: React.FC = () => {
   const [selectedSubItems, setSelectedSubItems] = useState(
     null as number | null
   );
+
+  const navigate = useNavigate();
 
   const toggle = (): void => {
     setOpen(!open);
@@ -36,7 +39,6 @@ export const Sidebar: React.FC = () => {
     {
       name: "Contact",
       icon: <MdContactPage size={25} />,
-      link: "/contact",
       subItems: [
         {
           name: "Email",
@@ -102,6 +104,7 @@ export const Sidebar: React.FC = () => {
                     setSelectedItem(index === selectedItem ? null : index);
                     item.subItems ? setSubItems(!subItems) : setSubItems(false);
                     setSelectedSubItems(null);
+                    item.link && navigate(item.link);
                   }}
                   className={
                     "d-flex align-items-center sidebarItensContainer action-icon" +
@@ -138,6 +141,7 @@ export const Sidebar: React.FC = () => {
                       setSelectedSubItems(
                         index === selectedSubItems ? null : index
                       );
+                      navigate(subItem.link);
                     }}
                     className={
                       "d-flex align-items-center sidebarItensContainer action-icon" +
