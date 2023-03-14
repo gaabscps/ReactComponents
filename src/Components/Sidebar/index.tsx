@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 
 export const Sidebar: React.FC = () => {
   const [open, setOpen] = useState(true);
-  const [selectedItem, setSelectedItem] = useState(null as number | null);
+  const [selectedItem, setSelectedItem] = useState(0);
   const [subItems, setSubItems] = useState(false);
   const [selectedSubItems, setSelectedSubItems] = useState(
     null as number | null
@@ -38,12 +38,12 @@ export const Sidebar: React.FC = () => {
       link: "/about",
     },
     {
-      name: "Contact",
+      name: "Componentes",
       icon: <MdContactPage size={25} />,
       subItems: [
         {
-          name: "Email",
-          link: "/contact/email",
+          name: "Collapse Table",
+          link: "/contact/collapsetable",
           icon: <MdContactMail size={25} />,
         },
         {
@@ -102,12 +102,16 @@ export const Sidebar: React.FC = () => {
               >
                 <li
                   onClick={() => {
-                    setSelectedItem(index === selectedItem ? null : index);
+                    setSelectedItem(index);
                     item.subItems ? setSubItems(!subItems) : setSubItems(false);
-                    setSelectedSubItems(null);
-                    item.link && navigate(item.link);
-                    if (selectedSubItems !== null) {
-                      navigate("/");
+                    if (item.link) {
+                      item.link && navigate(item.link);
+                    }
+                    if (!item.subItems) {
+                      setSelectedSubItems(null);
+                      if (!item.link) {
+                        navigate("/");
+                      }
                     }
                   }}
                   className={
@@ -144,9 +148,7 @@ export const Sidebar: React.FC = () => {
                 {item?.subItems?.map((subItem, index) => (
                   <li
                     onClick={() => {
-                      setSelectedSubItems(
-                        index === selectedSubItems ? null : index
-                      );
+                      setSelectedSubItems(index);
                       navigate(subItem.link);
                     }}
                     className={

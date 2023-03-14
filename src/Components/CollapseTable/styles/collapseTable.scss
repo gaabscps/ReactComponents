@@ -55,16 +55,11 @@
 
 .collapseTable--open {
   transform-origin: top;
-  transform : scaleY(1);
+  transform: scaleY(1);
   visibility: visible;
 }
 .collapseTable--hidden {
   transform-origin: top;
-  transform : scaleY(0);
+  transform: scaleY(0);
   visibility: hidden;
-}
-
-.collapseTable--after {
-  transition-delay: 2s;
-  display: none;
 }

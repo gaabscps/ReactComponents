@@ -1,8 +1,8 @@
 import React from "react";
 
-export const About = () => {
+export const AboutPage: React.FC = () => {
   return (
-    <div>
+    <div className="mainPageStyle">
       <h1>About</h1>
     </div>
   );
