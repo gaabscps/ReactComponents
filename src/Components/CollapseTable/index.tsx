@@ -105,14 +105,13 @@ any) => {
               <div
                 style={{
                   gridTemplateColumns:
-                    "repeat(" + (containerDatas.length + 1) + ", 1fr)",
+                    "repeat(" + containerDatas.length + ", 10fr) 1fr",
                 }}
                 className="containerTitle minWidth-full"
               >
                 {containerDatas.map((container: any, index: any) => (
                   <div style={{ width: "100px" }}>{container.title}</div>
                 ))}
-
                 <div className="containerArrow"></div>
               </div>
             )}
@@ -123,7 +122,7 @@ any) => {
               }}
               style={{
                 gridTemplateColumns:
-                  "repeat(" + (containerDatas.length + 1) + ", 1fr)",
+                  "repeat(" + containerDatas.length + ", 10fr) 1fr",
               }}
               className="collapseTable-container action-icon containerTitle minWidth-full"
             >
@@ -155,7 +154,7 @@ any) => {
           <div
             style={{
               gridTemplateColumns:
-                "repeat(" + (containerDatas.length + 1) + ", 1fr)",
+                "repeat(" + containerDatas.length + ", 10fr) 1fr",
             }}
             id="collapseTable"
             className={`fastTransition
