@@ -20,8 +20,8 @@ export interface CollapseTableProps {
 export const CollapseTable: React.FC = ({
   containerData,
   containerData2,
-  contentData,
-}: any) => {
+}: // contentData,
+any) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const containerDatas = [
@@ -70,7 +70,7 @@ export const CollapseTable: React.FC = ({
       // },
     ] || [];
 
-  const contentTitle =
+  const contentData =
     [
       {
         title: "Data",
@@ -150,8 +150,6 @@ export const CollapseTable: React.FC = ({
               {containerDatas2.map((container: any, index: any) => (
                 <div>{container.data}</div>
               ))}
-
-              {/* <div className="containerArrow">X</div> */}
             </div>
           </div>
           <div
@@ -162,15 +160,13 @@ export const CollapseTable: React.FC = ({
             id="collapseTable"
             className={`fastTransition
             ${isOpen ? "collapseTable--open" : "collapseTable--hidden"}
-            collapseTable-container containerTitle
+            collapseTable-container containerContent
             `}
           >
-            {contentTitle.map((content: any, index: any) => (
-              <div className="">
+            {contentData.map((content: any, index: any) => (
+              <div style={{ margin: "0 10px" }}>
                 <div className="contentTitle">{content.title}</div>
-                <div></div>
                 <div>{content.data}</div>
-                <div></div>
               </div>
             ))}
           </div>

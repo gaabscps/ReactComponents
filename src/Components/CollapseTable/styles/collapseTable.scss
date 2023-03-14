@@ -5,12 +5,19 @@
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.02);
   border-radius: 10px;
   align-items: center;
+  overflow: auto;
 }
 
 .containerTitle {
   display: grid;
   row-gap: 30px;
   padding: 18px 33px;
+}
+
+.containerContent {
+  display: grid;
+  row-gap: 30px;
+  padding: 18px 23px;
 }
 
 .collapseTable-title {
@@ -62,4 +69,7 @@
   transform-origin: top;
   transform: scaleY(0);
   visibility: hidden;
+}
+
+.contentContainer {
 }
