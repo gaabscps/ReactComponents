@@ -2,7 +2,8 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { MainPage } from "../Pages/MainPage/Page";
 import { AboutPage } from "../Pages/About";
-import { CollapseTablePage } from "../Pages/Components/CollapseTablePage";
+import { TablePage } from "../Pages/Components/TablesPage";
+import { BasicComponentsPage } from "../Pages/Components/BasicComponentsPage";
 
 export const Navigation = () => {
   return (
@@ -10,7 +11,11 @@ export const Navigation = () => {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/contact/collapsetable" element={<CollapseTablePage />} />
+        <Route path="/contact/collapsetable" element={<TablePage />} />
+        <Route
+          path="/contact/basic-components"
+          element={<BasicComponentsPage />}
+        />
       </Routes>
     </div>
   );

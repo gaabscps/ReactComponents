@@ -1,0 +1,48 @@
+@import "../../../styles/variable.scss";
+
+.buttonContainer {
+  box-sizing: border-box;
+  background-color: $buttonColor;
+  width: fit-content;
+  padding: 15px;
+  border-radius: 0.5rem;
+  height: fit-content;
+  cursor: pointer;
+  &:hover {
+    background-color: $buttonHoverColor;
+    color: #000;
+  }
+  &:active {
+    background-color: $buttonActiveColor;
+  }
+}
+
+//Themes
+.outline-dark {
+  border: 2px solid #000;
+  background-color: transparent;
+  &:hover {
+    background-color: #0000000c;
+  }
+  &:active {
+    background-color: #0000001a;
+  }
+}
+// end of Themes
+
+//Size
+.btn-small {
+  padding: $buttonSmall;
+  font-size: $buttonFontSmall;
+}
+
+.btn-medium {
+  padding: $buttonMedium;
+  font-size: $buttonFontMedium;
+}
+
+.btn-large {
+  padding: $buttonLarge;
+  font-size: $buttonFontLarge;
+}
+// end of Size

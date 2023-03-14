@@ -42,13 +42,13 @@ export const Sidebar: React.FC = () => {
       icon: <MdContactPage size={25} />,
       subItems: [
         {
-          name: "Collapse Table",
+          name: "Tabelas",
           link: "/contact/collapsetable",
           icon: <MdContactMail size={25} />,
         },
         {
-          name: "Phone",
-          link: "/contact/phone",
+          name: "Componentes Basicos",
+          link: "/contact/basic-components",
           icon: <MdContactPhone size={25} />,
         },
         {
@@ -120,7 +120,7 @@ export const Sidebar: React.FC = () => {
                   }
                   key={index}
                 >
-                  <div className="mr-5">{item.icon}</div>
+                  <div className="mr-10">{item.icon}</div>
                   <div>{item.name}</div>
                 </li>
               </ul>
@@ -157,7 +157,7 @@ export const Sidebar: React.FC = () => {
                     }
                     key={index}
                   >
-                    <div className="mr-5">{subItem.icon}</div>
+                    <div className="mr-10">{subItem.icon}</div>
                     <div>{subItem.name}</div>
                   </li>
                 ))}
