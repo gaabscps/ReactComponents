@@ -3,9 +3,10 @@
 //Components
 @import "../Components/Sidebar/styles/sidebar.scss";
 @import "../Components/CollapseTable/styles/collapseTable.scss";
-@import "../Components/Buttom/styles/button.scss";
+@import "../Components/Button/styles/button.scss";
 @import "../styles/reset.scss";
 @import "./app.scss";
+@import "../Components/InputText/styles/inputText.scss";
 
 html {
   font-family: "Poppins", sans-serif;
